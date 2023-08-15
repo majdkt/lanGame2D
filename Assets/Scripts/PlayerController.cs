@@ -2,21 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject[] cornerObjects;
-    private Color defaultColor;
-    private Color touchedColor;
     private Vector2 difference;
+    private GameManager gameManager;
 
     private void Start()
     {
-        defaultColor = cornerObjects[0].GetComponent<Renderer>().material.color;
-        touchedColor = Color.red; // Change it to the desired touched color
-
-        // Assign the OnTriggerEnter2D and OnTriggerExit2D methods as the trigger event handlers for the corner objects
-        for (int i = 0; i < cornerObjects.Length; i++)
-        {
-            cornerObjects[i].GetComponent<Renderer>().material.color = defaultColor;
-        }
+        // Find the GameManager in the scene and store a reference to it
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnMouseDown()
@@ -32,21 +24,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the trigger is with one of the corner objects
         if (collision.gameObject.CompareTag("CornerObject"))
         {
-            // Change the color of the collided corner object to the touched color
-            collision.gameObject.GetComponent<Renderer>().material.color = touchedColor;
-        }
-    }
+            // Determine if the corner interaction is correct or not
+            bool isCorrect = gameManager.IsCorrectInteraction(collision.gameObject);
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // Check if the trigger is with one of the corner objects
-        if (collision.gameObject.CompareTag("CornerObject"))
-        {
-            // Reset the color of the corner object to the default color
-            collision.gameObject.GetComponent<Renderer>().material.color = defaultColor;
+            // Pass the correctness information to the GameManager
+            gameManager.HandleInteraction(isCorrect);
         }
     }
 }

@@ -9,11 +9,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - GameOver
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Corner
   - 
   - 
   - 
