@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshPro scoreText;
     public GameObject gameOverObject;
     public GameObject gameGameObject;
+    public Image background; // Reference to the background image
 
     private string correctTranslation;
     private string[] incorrectTranslations;
@@ -18,10 +20,10 @@ public class GameManager : MonoBehaviour
     public Color correctColor = Color.green;    // Change to desired correct color
     public Color incorrectColor = Color.red;    // Change to desired incorrect color
 
-    private Renderer correctRenderer;
     private int score = 0;
-
     private bool isGameOver = false;
+    private bool isCorrectAnswerChosen = false; // Track if the correct answer is chosen
+    private bool isBlinking = false; // Track if the background is currently blinking
 
     private void Start()
     {
@@ -29,14 +31,7 @@ public class GameManager : MonoBehaviour
         GenerateRandomWordAndTranslations();
         AssignTranslationsToCornerObjects();
         UpdateScoreText();
-    }
-
-    private void Update()
-    {
-        if (isGameOver && Input.GetKeyDown(KeyCode.Space))
-        {
-            RestartGame();
-        }
+        StartBlinkingBackground();
     }
 
     private void GenerateRandomWordAndTranslations()
@@ -59,7 +54,6 @@ public class GameManager : MonoBehaviour
             if (i == correctIndex)
             {
                 ShuffleArray(cornerObjects);
-                correctRenderer = cornerObjects[0].GetComponent<Renderer>();
                 cornerObjects[0].GetComponentInChildren<TextMeshPro>().text = correctTranslation;
             }
             else if (incorrectIndex < incorrectTranslations.Length)
@@ -104,29 +98,66 @@ public class GameManager : MonoBehaviour
         return cornerObject == cornerObjects[0];
     }
 
+    public void StartBlinkingBackground()
+    {
+        if (!isBlinking)
+        {
+            StartCoroutine(BlinkBackground());
+        }
+    }
+
+    private IEnumerator BlinkBackground()
+    {
+        isBlinking = true;
+
+        while (!isGameOver)
+        {
+            if (isCorrectAnswerChosen)
+            {
+                background.color = correctColor; // Change background to correctColor
+                yield return new WaitForSeconds(1.0f); // Wait for 1 second
+                background.color = defaultColor; // Reset background color to default
+                isCorrectAnswerChosen = false; // Reset the flag
+            }
+            else
+            {
+                background.color = Color.white; // Change background to white
+                yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
+                background.color = Color.black; // Change background to black
+                yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
+            }
+        }
+
+        isBlinking = false;
+    }
+
     public void HandleInteraction(bool isCorrect)
     {
         if (isCorrect)
         {
             IncreaseScore();
-            // Change color to correctColor for the correct corner object
-            correctRenderer.material.color = correctColor;
-            StartCoroutine(ResetColorAfterDelay(correctRenderer, defaultColor));
+            isCorrectAnswerChosen = true; // Set the flag to true
+            background.color = correctColor; // Change background to correctColor
+            StartCoroutine(ResetBackgroundColorAfterDelay(1.0f, defaultColor)); // Reset color after 1 second
             RestartGame();
         }
         else
         {
-            // Change color to incorrectColor for the chosen corner object
-            correctRenderer.material.color = incorrectColor;
-            StartCoroutine(ResetColorAfterDelay(correctRenderer, defaultColor));
+            background.color = incorrectColor; // Change background to incorrectColor
+            StopBlinkingBackground(); // Stop the background blinking
             ActivateGameOver();
         }
     }
 
-    private IEnumerator ResetColorAfterDelay(Renderer renderer, Color targetColor)
+    private IEnumerator ResetBackgroundColorAfterDelay(float delay, Color targetColor)
     {
-        yield return new WaitForSeconds(0.3f); // Change this delay as needed
-        renderer.material.color = targetColor;
+        yield return new WaitForSeconds(delay);
+        background.color = targetColor; // Reset background color to the target color
+    }
+
+    public void StopBlinkingBackground()
+    {
+        StopAllCoroutines(); // Stop all coroutines, including BlinkBackground
     }
 
     private void IncreaseScore()
@@ -135,12 +166,13 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
     }
 
-    // ReSharper disable Unity.PerformanceAnalysis
     private void RestartGame()
     {
         AssignGermanWordToText();
         GenerateRandomWordAndTranslations();
         AssignTranslationsToCornerObjects();
+        StartBlinkingBackground(); // Restart the background blinking
+        isGameOver = false;
     }
 
     private void ActivateGameOver()
