@@ -2,133 +2,97 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public WordGenerator wordGenerator;
     public GameObject[] cornerObjects;
-    public TextMeshPro germanWordText;
     public TextMeshPro scoreText;
     public GameObject gameOverObject;
     public GameObject gameGameObject;
-    public Image background; // Reference to the background image
+    public Image background;
 
     private string correctTranslation;
-    private string[] incorrectTranslations;
-
+    private bool isGameOver = false;
     private Color defaultColor = Color.white;
-    public Color correctColor = Color.green;    // Change to desired correct color
-    public Color incorrectColor = Color.red;    // Change to desired incorrect color
+    public Color correctColor = Color.green;
+    public Color incorrectColor = Color.red;
 
     private int score = 0;
-    private bool isGameOver = false;
-    private bool isCorrectAnswerChosen = false; // Track if the correct answer is chosen
-    private bool isBlinking = false; // Track if the background is currently blinking
 
     private void Start()
     {
-        AssignGermanWordToText();
-        GenerateRandomWordAndTranslations();
-        AssignTranslationsToCornerObjects();
-        UpdateScoreText();
-        StartBlinkingBackground();
+        wordGenerator.GenerateRandomWord((word) => {
+            AssignWordAndTranslationsToCorners(word);
+            UpdateScoreText();
+            StartBlinkingBackground();
+        });
     }
 
-    private void GenerateRandomWordAndTranslations()
+ private void AssignWordAndTranslationsToCorners(Word randomWord)
+{
+    string englishWord = randomWord.englishWord;
+
+
+    correctTranslation = randomWord.correctTranslation.text;
+    string randomTranslation = randomWord.randomTranslation.text;
+
+    List<int> availablePositions = new List<int> { 0, 1, 2, 3 }; // Assuming 4 corners
+    int englishWordPosition = Random.Range(0, availablePositions.Count);
+    availablePositions.RemoveAt(englishWordPosition);
+
+    int germanWordPosition = availablePositions[Random.Range(0, availablePositions.Count)];
+    availablePositions.Remove(germanWordPosition);
+
+    int randomTranslationPosition = availablePositions[Random.Range(0, availablePositions.Count)];
+
+    for (int i = 0; i < cornerObjects.Length; i++)
     {
-        Word randomWord = wordGenerator.GenerateRandomWord();
+        TextMeshPro textMeshPro = cornerObjects[i].GetComponentInChildren<TextMeshPro>();
 
-        string germanWord = randomWord.germanWord;
-        germanWordText.text = germanWord;
-
-        correctTranslation = randomWord.correctTranslation.text;
-
-        Translation[] translations = randomWord.incorrectTranslations;
-        incorrectTranslations = new string[cornerObjects.Length - 1];
-
-        int correctIndex = Random.Range(0, cornerObjects.Length - 1);
-        int incorrectIndex = 0;
-
-        for (int i = 0; i < translations.Length; i++)
+        if (i == englishWordPosition)
         {
-            if (i == correctIndex)
-            {
-                ShuffleArray(cornerObjects);
-                cornerObjects[0].GetComponentInChildren<TextMeshPro>().text = correctTranslation;
-            }
-            else if (incorrectIndex < incorrectTranslations.Length)
-            {
-                incorrectTranslations[incorrectIndex] = translations[i].text;
-                incorrectIndex++;
-            }
+            textMeshPro.text = englishWord;
+
         }
-
-        ShuffleArray(incorrectTranslations);
-    }
-
-    private void AssignTranslationsToCornerObjects()
-    {
-        int incorrectIndex = 0;
-
-        for (int i = 1; i < cornerObjects.Length; i++)
+        else if (i == germanWordPosition)
         {
-            TextMeshPro textMeshPro = cornerObjects[i].GetComponentInChildren<TextMeshPro>();
-            textMeshPro.text = incorrectTranslations[incorrectIndex];
-            incorrectIndex++;
+            textMeshPro.text = correctTranslation;
+        }
+        else if (i == randomTranslationPosition)
+        {
+            textMeshPro.text = randomTranslation;
+        }
+        else
+        {
+            textMeshPro.text = correctTranslation; // Duplicates for remaining corners
         }
     }
+}
 
-    private void AssignGermanWordToText()
-    {
-        germanWordText.text = wordGenerator.GenerateRandomWord().germanWord;
-    }
 
-    private void ShuffleArray<T>(T[] array)
-    {
-        int n = array.Length;
-        while (n > 1)
-        {
-            int k = Random.Range(0, n--);
-            (array[n], array[k]) = (array[k], array[n]);
-        }
-    }
 
     public bool IsCorrectInteraction(GameObject cornerObject)
     {
-        return cornerObject == cornerObjects[0];
+        TextMeshPro textMeshPro = cornerObject.GetComponentInChildren<TextMeshPro>();
+        return textMeshPro.text == correctTranslation;
     }
 
     public void StartBlinkingBackground()
     {
-        if (!isBlinking)
-        {
-            StartCoroutine(BlinkBackground());
-        }
+        StartCoroutine(BlinkBackground());
     }
 
     private IEnumerator BlinkBackground()
     {
-        isBlinking = true;
-
         while (!isGameOver)
         {
-            if (isCorrectAnswerChosen)
-            {
-                background.color = correctColor; // Change background to correctColor
-                yield return new WaitForSeconds(1.0f); // Wait for 1 second
-                background.color = defaultColor; // Reset background color to default
-                isCorrectAnswerChosen = false; // Reset the flag
-            }
-            else
-            {
-                background.color = Color.white; // Change background to white
-                yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
-                background.color = Color.black; // Change background to black
-                yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
-            }
+            background.color = Color.white;
+            yield return new WaitForSeconds(0.5f);
+            background.color = Color.black;
+            yield return new WaitForSeconds(0.5f);
         }
-
-        isBlinking = false;
     }
 
     public void HandleInteraction(bool isCorrect)
@@ -136,50 +100,31 @@ public class GameManager : MonoBehaviour
         if (isCorrect)
         {
             IncreaseScore();
-            isCorrectAnswerChosen = true; // Set the flag to true
-            background.color = correctColor; // Change background to correctColor
-            StartCoroutine(ResetBackgroundColorAfterDelay(1.0f, defaultColor)); // Reset color after 1 second
-            RestartGame();
+            background.color = correctColor;
+            StartCoroutine(ResetBackgroundColorAfterDelay(1.0f, defaultColor));
+            wordGenerator.GenerateRandomWord((word) => {
+                AssignWordAndTranslationsToCorners(word);
+            });
         }
         else
         {
-            background.color = incorrectColor; // Change background to incorrectColor
-            StopBlinkingBackground(); // Stop the background blinking
-            ActivateGameOver();
+            background.color = incorrectColor;
+            gameOverObject.SetActive(true);
+            gameGameObject.SetActive(false);
+            isGameOver = true;
         }
     }
 
     private IEnumerator ResetBackgroundColorAfterDelay(float delay, Color targetColor)
     {
         yield return new WaitForSeconds(delay);
-        background.color = targetColor; // Reset background color to the target color
-    }
-
-    public void StopBlinkingBackground()
-    {
-        StopAllCoroutines(); // Stop all coroutines, including BlinkBackground
+        background.color = targetColor;
     }
 
     private void IncreaseScore()
     {
         score++;
         UpdateScoreText();
-    }
-
-    private void RestartGame()
-    {
-        AssignGermanWordToText();
-        GenerateRandomWordAndTranslations();
-        AssignTranslationsToCornerObjects();
-        StartBlinkingBackground(); // Restart the background blinking
-        isGameOver = false;
-    }
-
-    private void ActivateGameOver()
-    {
-        isGameOver = true;
-        gameOverObject.SetActive(true);
-        gameGameObject.SetActive(false);
     }
 
     private void UpdateScoreText()
