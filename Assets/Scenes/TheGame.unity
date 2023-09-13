@@ -335,95 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30101d2bd25c4147a48342dcad0662c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words:
-  - germanWord: Haus
-    correctTranslation:
-      text: house
-      isCorrect: 1
-    incorrectTranslations:
-    - text: shit
-      isCorrect: 0
-    - text: pee
-      isCorrect: 0
-    - text: bro
-      isCorrect: 0
-  - germanWord: Hund
-    correctTranslation:
-      text: dog
-      isCorrect: 1
-    incorrectTranslations:
-    - text: horse
-      isCorrect: 0
-    - text: cat
-      isCorrect: 0
-    - text: cow
-      isCorrect: 0
-  - germanWord: Licht
-    correctTranslation:
-      text: light
-      isCorrect: 0
-    incorrectTranslations:
-    - text: table
-      isCorrect: 0
-    - text: mouse
-      isCorrect: 0
-    - text: phone
-      isCorrect: 0
-  - germanWord: Himmel
-    correctTranslation:
-      text: sky
-      isCorrect: 1
-    incorrectTranslations:
-    - text: ball
-      isCorrect: 0
-    - text: key
-      isCorrect: 0
-    - text: case
-      isCorrect: 0
-  - germanWord: Essen
-    correctTranslation:
-      text: food
-      isCorrect: 1
-    incorrectTranslations:
-    - text: water
-      isCorrect: 0
-    - text: key
-      isCorrect: 0
-    - text: sun
-      isCorrect: 0
-  - germanWord: Hose
-    correctTranslation:
-      text: pants
-      isCorrect: 1
-    incorrectTranslations:
-    - text: house
-      isCorrect: 0
-    - text: candy
-      isCorrect: 0
-    - text: moon
-      isCorrect: 0
-  - germanWord: Handy
-    correctTranslation:
-      text: phone
-      isCorrect: 0
-    incorrectTranslations:
-    - text: house
-      isCorrect: 0
-    - text: honey
-      isCorrect: 0
-    - text: post
-      isCorrect: 0
-  - germanWord: Kaffee
-    correctTranslation:
-      text: coffee
-      isCorrect: 1
-    incorrectTranslations:
-    - text: power
-      isCorrect: 0
-    - text: milk
-      isCorrect: 0
-    - text: mouse
-      isCorrect: 0
+  words: []
 --- !u!1 &147253214
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +886,7 @@ MonoBehaviour:
   - {fileID: 709213433}
   - {fileID: 920291399}
   - {fileID: 1784687492}
-  germanWordText: {fileID: 526036503}
+  germanWordText: {fileID: 0}
   scoreText: {fileID: 147253216}
   gameOverObject: {fileID: 1897284259}
   gameGameObject: {fileID: 318457366}
@@ -3106,7 +3018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104943339}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c808dcc91b1959041939b4778d4ecabd, type: 3}
   m_Name: 
@@ -3128,9 +3040,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4262a97b19ea3f44d873c5d43eea6483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordManager: {fileID: 1104943342}
-  background: {fileID: 1125347719}
-  translationText: 
+  germanWordText: {fileID: 1952615262}
+  correctTranslationButton: {fileID: 1586215484}
+  randomTranslationButton: {fileID: 480216650}
+  resultText: {fileID: 1144149054}
 --- !u!1 &1125347717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,7 +3140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1144149053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4551,7 +4464,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952615260}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4561,7 +4474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.002, y: -0.872}
+  m_AnchoredPosition: {x: 0.0019999743, y: -0.87199974}
   m_SizeDelta: {x: 0.45192, y: 0.2835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952615262
