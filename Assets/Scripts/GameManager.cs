@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines(); // Stop all coroutines, including BlinkBackground
     }
 
-    private void IncreaseScore()
+    public void IncreaseScore()
     {
         score++;
         UpdateScoreText();
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
     }
 
-    private void ActivateGameOver()
+    public void ActivateGameOver()
     {
         isGameOver = true;
         gameOverObject.SetActive(true);

@@ -19,6 +19,7 @@ public class WordGenerator : MonoBehaviour
 {
     public Word[] words;
 
+    //Here change GenerateRandomWords
     public Word GenerateRandomWord()
     {
         int randomIndex = Random.Range(0, words.Length);
