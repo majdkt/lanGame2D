@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,7 @@ public class WordArray
 
 public class WordGenerator : MonoBehaviour
 {
-    private const string RANDOM_WORD_URL = "https://random-word-api.herokuapp.com/word?length=5";
+    private const string RANDOM_WORD_URL = "https://random-word-api.herokuapp.com/word?length=3";
     private const string TRANSLATE_URL = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=de&dt=t&q=";
 
     public void GenerateRandomWord(System.Action<Word> callback)

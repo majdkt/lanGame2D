@@ -1,14 +1,15 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Vector2 difference;
-    private GameManager gameManager;
+    private WordGenerationAndAssignment wordGenAndAssign; // Reference to WordGenerationAndAssignment
 
     private void Start()
     {
-        // Find the GameManager in the scene and store a reference to it
-        gameManager = FindObjectOfType<GameManager>();
+        // Find the WordGenerationAndAssignment script in the scene and store a reference to it
+        wordGenAndAssign = FindObjectOfType<WordGenerationAndAssignment>();
     }
 
     private void OnMouseDown()
@@ -26,11 +27,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CornerObject"))
         {
-            // Determine if the corner interaction is correct or not
-            bool isCorrect = gameManager.IsCorrectInteraction(collision.gameObject);
+            // Get the text from the collided corner object
+            string chosenTranslation = collision.gameObject.GetComponentInChildren<TextMeshPro>().text;
 
-            // Pass the correctness information to the GameManager
-            gameManager.HandleInteraction(isCorrect);
+            // Pass the chosen translation to the WordGenerationAndAssignment script
+            wordGenAndAssign.HandleChoice(chosenTranslation);
         }
     }
 }
