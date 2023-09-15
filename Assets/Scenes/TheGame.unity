@@ -184,8 +184,7 @@ MonoBehaviour:
   m_text: 'Game Over '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -307,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &77244796
 Transform:
   m_ObjectHideFlags: 0
@@ -397,8 +396,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -570,8 +568,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1307,8 +1304,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1577,8 +1573,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1750,8 +1745,7 @@ MonoBehaviour:
   m_text: "In this level \r\nyou have to move\r\nthe circle to the \r\ncorrect translation\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2509,8 +2503,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2840,8 +2833,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2967,7 +2959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1047186117
 Transform:
   m_ObjectHideFlags: 0
@@ -3013,7 +3005,8 @@ Transform:
   m_LocalPosition: {x: 213.84724, y: -207.52701, z: 60351.492}
   m_LocalScale: {x: 142.04466, y: 142.04465, z: 142.04466}
   m_ConstrainProportionsScale: 0
-  m_Children: [{fileID: 16670450}]
+  m_Children:
+  - {fileID: 16670450}
   m_Father: {fileID: 1848502700}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3029,11 +3022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c808dcc91b1959041939b4778d4ecabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordGenerator: {fileID: 77244797}
-  cornerObjects:
-  - {fileID: 2074767595}
-  - {fileID: 2002927077}
-  germanWordText: {fileID: 1952615262}
 --- !u!114 &1104943343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3046,10 +3034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4262a97b19ea3f44d873c5d43eea6483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germanWordText: {fileID: 1952615262}
-  correctTranslationButton: {fileID: 1586215484}
-  randomTranslationButton: {fileID: 480216650}
-  resultText: {fileID: 1144149054}
 --- !u!1 &1125347717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,8 +3174,7 @@ MonoBehaviour:
   m_text: Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3375,8 +3358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
-    type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.72156864}
   m_FlipX: 0
   m_FlipY: 0
@@ -3448,8 +3430,7 @@ MonoBehaviour:
   m_text: "In this level \r\nyou have to choose\nthe correct translation"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3851,8 +3832,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4510,8 +4490,7 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4742,8 +4721,7 @@ MonoBehaviour:
     Word'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4962,8 +4940,7 @@ MonoBehaviour:
     Word'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
-    type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
