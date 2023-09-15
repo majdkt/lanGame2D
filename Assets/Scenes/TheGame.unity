@@ -184,7 +184,8 @@ MonoBehaviour:
   m_text: 'Game Over '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -335,7 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30101d2bd25c4147a48342dcad0662c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words: []
 --- !u!1 &147253214
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +397,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -569,7 +570,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -880,13 +882,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae16f9ec95e8acc4da0e9e8bbcd2b599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  englishWordDisplay: {fileID: 526036503}
   wordGenerator: {fileID: 77244797}
   cornerObjects:
   - {fileID: 680365849}
   - {fileID: 709213433}
   - {fileID: 920291399}
   - {fileID: 1784687492}
-  germanWordText: {fileID: 0}
   scoreText: {fileID: 147253216}
   gameOverObject: {fileID: 1897284259}
   gameGameObject: {fileID: 318457366}
@@ -1305,7 +1307,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1574,7 +1577,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1746,7 +1750,8 @@ MonoBehaviour:
   m_text: "In this level \r\nyou have to move\r\nthe circle to the \r\ncorrect translation\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2504,7 +2509,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2834,7 +2840,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3006,8 +3013,7 @@ Transform:
   m_LocalPosition: {x: 213.84724, y: -207.52701, z: 60351.492}
   m_LocalScale: {x: 142.04466, y: 142.04465, z: 142.04466}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 16670450}
+  m_Children: [{fileID: 16670450}]
   m_Father: {fileID: 1848502700}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3184,7 +3190,8 @@ MonoBehaviour:
   m_text: Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3368,7 +3375,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+    type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.72156864}
   m_FlipX: 0
   m_FlipY: 0
@@ -3440,7 +3448,8 @@ MonoBehaviour:
   m_text: "In this level \r\nyou have to choose\nthe correct translation"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3842,7 +3851,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4500,7 +4510,8 @@ MonoBehaviour:
   m_text: Word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4731,7 +4742,8 @@ MonoBehaviour:
     Word'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4950,7 +4962,8 @@ MonoBehaviour:
     Word'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
-  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f, type: 2}
+  m_sharedMaterial: {fileID: -8463479328319638422, guid: 99fe1eeb3a54b074bae8849b4eab7b4f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
