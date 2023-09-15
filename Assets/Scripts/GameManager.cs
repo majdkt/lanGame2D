@@ -1,11 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshPro englishWordDisplay;
     public WordGenerator wordGenerator;
     public GameObject[] cornerObjects;
     public TextMeshPro scoreText;
@@ -30,48 +31,29 @@ public class GameManager : MonoBehaviour
         });
     }
 
- private void AssignWordAndTranslationsToCorners(Word randomWord)
-{
-    string englishWord = randomWord.englishWord;
-
-
-    correctTranslation = randomWord.correctTranslation.text;
-    string randomTranslation = randomWord.randomTranslation.text;
-
-    List<int> availablePositions = new List<int> { 0, 1, 2, 3 }; // Assuming 4 corners
-    int englishWordPosition = Random.Range(0, availablePositions.Count);
-    availablePositions.RemoveAt(englishWordPosition);
-
-    int germanWordPosition = availablePositions[Random.Range(0, availablePositions.Count)];
-    availablePositions.Remove(germanWordPosition);
-
-    int randomTranslationPosition = availablePositions[Random.Range(0, availablePositions.Count)];
-
-    for (int i = 0; i < cornerObjects.Length; i++)
+    private void AssignWordAndTranslationsToCorners(Word randomWord)
     {
-        TextMeshPro textMeshPro = cornerObjects[i].GetComponentInChildren<TextMeshPro>();
+        englishWordDisplay.text = randomWord.englishWord;
 
-        if (i == englishWordPosition)
-        {
-            textMeshPro.text = englishWord;
+        correctTranslation = randomWord.correctTranslation.text;
 
-        }
-        else if (i == germanWordPosition)
+        List<string> cornerWords = new List<string> 
         {
-            textMeshPro.text = correctTranslation;
-        }
-        else if (i == randomTranslationPosition)
+            correctTranslation,
+            randomWord.incorrectTranslations[0].text,
+            randomWord.incorrectTranslations[1].text,
+            randomWord.incorrectTranslations[2].text
+        };
+
+        for (int i = 0; i < cornerObjects.Length; i++)
         {
-            textMeshPro.text = randomTranslation;
-        }
-        else
-        {
-            textMeshPro.text = correctTranslation; // Duplicates for remaining corners
+            TextMeshPro textMeshPro = cornerObjects[i].GetComponentInChildren<TextMeshPro>();
+
+            int randomIndex = Random.Range(0, cornerWords.Count);
+            textMeshPro.text = cornerWords[randomIndex];
+            cornerWords.RemoveAt(randomIndex);
         }
     }
-}
-
-
 
     public bool IsCorrectInteraction(GameObject cornerObject)
     {

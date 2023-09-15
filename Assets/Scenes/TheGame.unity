@@ -303,95 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30101d2bd25c4147a48342dcad0662c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words:
-  - germanWord: Haus
-    correctTranslation:
-      text: house
-      isCorrect: 1
-    incorrectTranslations:
-    - text: shit
-      isCorrect: 0
-    - text: pee
-      isCorrect: 0
-    - text: bro
-      isCorrect: 0
-  - germanWord: Hund
-    correctTranslation:
-      text: dog
-      isCorrect: 1
-    incorrectTranslations:
-    - text: horse
-      isCorrect: 0
-    - text: cat
-      isCorrect: 0
-    - text: cow
-      isCorrect: 0
-  - germanWord: Licht
-    correctTranslation:
-      text: light
-      isCorrect: 0
-    incorrectTranslations:
-    - text: table
-      isCorrect: 0
-    - text: mouse
-      isCorrect: 0
-    - text: phone
-      isCorrect: 0
-  - germanWord: Himmel
-    correctTranslation:
-      text: sky
-      isCorrect: 1
-    incorrectTranslations:
-    - text: ball
-      isCorrect: 0
-    - text: key
-      isCorrect: 0
-    - text: case
-      isCorrect: 0
-  - germanWord: Essen
-    correctTranslation:
-      text: food
-      isCorrect: 1
-    incorrectTranslations:
-    - text: water
-      isCorrect: 0
-    - text: key
-      isCorrect: 0
-    - text: sun
-      isCorrect: 0
-  - germanWord: Hose
-    correctTranslation:
-      text: pants
-      isCorrect: 1
-    incorrectTranslations:
-    - text: house
-      isCorrect: 0
-    - text: candy
-      isCorrect: 0
-    - text: moon
-      isCorrect: 0
-  - germanWord: Handy
-    correctTranslation:
-      text: phone
-      isCorrect: 0
-    incorrectTranslations:
-    - text: house
-      isCorrect: 0
-    - text: honey
-      isCorrect: 0
-    - text: post
-      isCorrect: 0
-  - germanWord: Kaffee
-    correctTranslation:
-      text: coffee
-      isCorrect: 1
-    incorrectTranslations:
-    - text: power
-      isCorrect: 0
-    - text: milk
-      isCorrect: 0
-    - text: mouse
-      isCorrect: 0
 --- !u!1 &147253214
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,13 +702,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae16f9ec95e8acc4da0e9e8bbcd2b599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  englishWordDisplay: {fileID: 526036503}
   wordGenerator: {fileID: 77244797}
   cornerObjects:
   - {fileID: 680365849}
   - {fileID: 709213433}
   - {fileID: 920291399}
   - {fileID: 1784687492}
-  germanWordText: {fileID: 526036503}
   scoreText: {fileID: 147253216}
   gameOverObject: {fileID: 1897284259}
   gameGameObject: {fileID: 318457366}
