@@ -27,10 +27,8 @@ public class WordArray
 
 public class WordGenerator : MonoBehaviour
 {
-    private const string RANDOM_WORD_URL = "https://random-word-api.herokuapp.com/word?lang=en";
-
-    private const string TRANSLATE_URL =
-        "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=de&dt=t&q=";
+    private const string RANDOM_WORD_URL = "https://random-word-api.herokuapp.com/word?length=5";
+    private const string TRANSLATE_URL = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=de&dt=t&q=";
 
     public void GenerateRandomWord(System.Action<Word> callback)
     {
@@ -51,8 +49,7 @@ public class WordGenerator : MonoBehaviour
                 yield break;
             }
 
-            WordArray wordArray =
-                JsonUtility.FromJson<WordArray>("{\"words\":" + wordRequest.downloadHandler.text + "}");
+            WordArray wordArray = JsonUtility.FromJson<WordArray>("{\"words\":" + wordRequest.downloadHandler.text + "}");
             word.englishWord = wordArray.words[0];
 
             using (UnityWebRequest translationRequest = UnityWebRequest.Get(TRANSLATE_URL + word.englishWord))
@@ -90,8 +87,7 @@ public class WordGenerator : MonoBehaviour
                     yield break;
                 }
 
-                WordArray randomWordArray =
-                    JsonUtility.FromJson<WordArray>("{\"words\":" + randomWordRequest.downloadHandler.text + "}");
+                WordArray randomWordArray = JsonUtility.FromJson<WordArray>("{\"words\":" + randomWordRequest.downloadHandler.text + "}");
                 string randomEnglishWord = randomWordArray.words[0];
 
                 using (UnityWebRequest translationRequest = UnityWebRequest.Get(TRANSLATE_URL + randomEnglishWord))
