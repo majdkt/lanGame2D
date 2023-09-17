@@ -7,8 +7,7 @@ public class WordGenerationAndAssignment : MonoBehaviour
     public TextMeshPro englishWordDisplay;
     public GameObject[] cornerObjects;
     public WordGenerator wordGenerator; // Reference to the WordGenerator
-
-    private string correctTranslation;
+    internal string correctTranslation;
     public UIManager uiManager; // Reference to the UIManager
 
     private void Start()
