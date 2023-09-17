@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public TextMeshPro scoreText;
     public GameObject gameOverObject;
     public GameObject gameGameObject;
+    public Button restartButton;
     public Image background;
 
     public Color correctColor = Color.green;
@@ -20,15 +21,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        // Find all TextMeshPro components in the scene
-        TextMeshPro[] textMeshPros = FindObjectsOfType<TextMeshPro>();
-        // Iterate through each TextMeshPro component and auto-size it
-        foreach (TextMeshPro textMeshPro in textMeshPros)
-        {
-            AutoSizeTextToFitRectTransform(textMeshPro);
-        }
         StartBlinkingBackground();
         wordGenAndAssign = GetComponent<WordGenerationAndAssignment>();
+        restartButton.onClick.AddListener(RestartGame);
     }
 
     public void StartBlinkingBackground()
@@ -46,9 +41,6 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             background.color = targetColor;
             yield return new WaitForSeconds(0.5f);
-
-            // Swap startColor and targetColor for the next cycle
-            (startColor, targetColor) = (targetColor, startColor);
         }
     }
 
@@ -58,21 +50,14 @@ public class UIManager : MonoBehaviour
         {
             IncreaseScore();
             background.color = correctColor;
-            StartCoroutine(ResetBackgroundColorAfterDelay(1.0f));
+
         }
         else
         {
             background.color = incorrectColor;
             gameOverObject.SetActive(true);
             gameGameObject.SetActive(false);
-            isGameOver = true;
         }
-    }
-
-    private IEnumerator ResetBackgroundColorAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        background.color = new Color(1f, 1f, 1f, 0.25f);
     }
 
     private void IncreaseScore()
@@ -87,28 +72,11 @@ public class UIManager : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
     }
- 
-    public static void AutoSizeTextToFitRectTransform(TextMeshPro textMeshPro)
+    
+    
+    public void RestartGame()
     {
-        if (textMeshPro == null)
-        {
-            return;
-        }
-
-        RectTransform rectTransform = textMeshPro.rectTransform;
-        float availableWidth = rectTransform.rect.width;
-        float availableHeight = rectTransform.rect.height;
-
-        // Calculate the aspect ratio of the RectTransform
-        float rectAspectRatio = availableWidth / availableHeight;
-
-        // Calculate the aspect ratio of the TextMeshPro component
-        float textAspectRatio = textMeshPro.preferredWidth / textMeshPro.preferredHeight;
-
-        // Calculate the scaling factor based on the aspect ratios
-        float scaleFactor = rectAspectRatio / textAspectRatio;
-
-        // Set the font size based on the scaling factor
-        textMeshPro.fontSize *= scaleFactor;
+        
     }
+
 }

@@ -14,7 +14,6 @@ public class Translation
 [System.Serializable]
 public class Word
 {
-    public string germanWord;
     public string englishWord; 
     public Translation correctTranslation; 
     public List<Translation> incorrectTranslations = new List<Translation>();
