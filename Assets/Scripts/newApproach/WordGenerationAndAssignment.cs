@@ -9,7 +9,8 @@ public class WordGenerationAndAssignment : MonoBehaviour
     public WordGenerator wordGenerator; // Reference to the WordGenerator
     internal string correctTranslation;
     public UIManager uiManager; // Reference to the UIManager
-
+    public UIManager2 uiManager2;
+    
     private void Start()
     {
         GenerateAndAssignWord();
@@ -56,5 +57,17 @@ public class WordGenerationAndAssignment : MonoBehaviour
             uiManager.HandleInteraction(false); // Call UIManager's HandleInteraction with false
         }
     }
-    
+    // Call this method when the player makes a choice
+    public void HandleChoice2(string chosenTranslation)
+    {
+        if (chosenTranslation == correctTranslation)
+        {
+            uiManager2.HandleInteraction(true); // Call UIManager's HandleInteraction with true
+            GenerateAndAssignWord(); // Generate the next set of words
+        }
+        else
+        {
+            uiManager2.HandleInteraction(false); // Call UIManager's HandleInteraction with false
+        }
+    }
 }
