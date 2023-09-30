@@ -11,7 +11,7 @@ correct translation
 
 level 2
 ------------------
-In the first level
+In this level
 you have to choose 
 the right translation
 between 2 different translations
