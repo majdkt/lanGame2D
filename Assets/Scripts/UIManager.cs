@@ -51,13 +51,6 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        if (score == score+1)
-        {
-            background.color = correctColor;
-            yield return new WaitForSeconds(0.5f);
-            background.color = correctColor;
-            yield return new WaitForSeconds(0.5f);
-        }
     }
 
 
