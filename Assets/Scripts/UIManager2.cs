@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,12 +14,12 @@ public class UIManager2 : MonoBehaviour
     public GameObject gameOverObject;
     public GameObject gameGameObject;
     public GameObject block;
-    public GameObject background;
+    private GameObject background;
     public AudioSource winSound; // Reference to the Audio Source component
     public AudioSource loseSound;
     public float pitchIncrement = 0.1f; // Adjust this value to control the pitch increment
     public Color correctColor = Color.green;
-    public Color incorrectColor = Color.red;
+    public Color backGrColor = Color.white; 
     public float[] yPositions; // Array to store the Y positions
     private int currentPositionIndex = 0; // Index of the current position in the array
 
@@ -72,7 +74,7 @@ public class UIManager2 : MonoBehaviour
             // Set the new Y position
             Vector3 newPosition = new Vector3(initialX, yPositions[currentPositionIndex], initialZ);
             block.transform.position = newPosition;
-            background.GetComponent<Image>().color = correctColor;
+            startBlinking();
         }
         else
         {
@@ -112,4 +114,15 @@ public class UIManager2 : MonoBehaviour
         gameGameObject.SetActive(true);
     }
 
+    private IEnumerator blink()
+    { 
+        background.GetComponent<Image>().color = correctColor;
+        yield return new WaitForSeconds(0.5f);
+        background.GetComponent<Image>().color = backGrColor;
+    }
+
+    public void startBlinking()
+    {
+        StartCoroutine(blink());
+    }
 }
