@@ -34,4 +34,10 @@ public class PlayerController : MonoBehaviour
             wordGenAndAssign.HandleChoice(chosenTranslation);
         }
     }
+
+    public static void ResetPlayerPosition(PlayerController player)
+    {
+        // Set the player's position to (0, 0, -1) for the specified player instance
+        player.transform.position = new Vector3(0f, 0f, -1f);
+    }
 }
